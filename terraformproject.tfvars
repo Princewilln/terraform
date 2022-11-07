@@ -1,0 +1,8 @@
+myapp-cidr-vpc="10.0.0.0/16"
+env-prefix="myapp"
+myapp-cidr-subnet="10.0.6.0/24"
+av_zone="us-east-1a"
+myapp-cidr-rtb="0.0.0.0/0"
+myapp-cidr-ingress="73.115.172.129/32"
+instance_type="t2.micro"
+public_key_location="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDB0zO8Ao/FkHAODqLEK4VGnrhJ1B1qCPUCF5+sKczK1qpzJNpmfJPUrVjz3nvCkQ4a6yAQb7IGKHXkcNLlK/eGJR/yvELqJvj2JQ/BDpuvM+8MTuXQm20XGEl8BDGbtYpQFbBLab+qeU2vjzRsAZWZ/eCmIBnGZiYtIMJTgCgWr7DaWm2/oH60obC+GdsPv4Sw7Wtx67zcsxQn1G8yKNbkTLjvatbrIFlgLbJxB/Uc3i3wPM29DoobbnIXloEZ9pHTT55m3q5PLsAmWBExcvuYbfjvrWDxq9CtQjvI+/v8DehPPWeYbt9OTg5RTc7pyV6nVLnq8vdIo4DgD9f0h6iqleTrgDBYG5oRosZCPSyb5zra/ncn1CPgw/gu21S+VlKFAwBvEfI6W/u5ThIqLkxZZAE04e8jn69UPaYD/PVK5CzeNlCaCQeb+LSfsd32IbxvKFCQFOVlrPAgYJ78asbUKeMGhgatPOw2SSA0ZV7NF5RtW1eH0f7xe15PCMl85Gc= Nonso@Princewill"
