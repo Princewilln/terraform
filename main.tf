@@ -19,6 +19,7 @@ variable "myapp-cidr-rtb" {}
 variable "myapp-cidr-ingress" {}
 variable "instance_type" {}
 variable "public_key_location" {}
+variable "private_key" {}
 
 resource "aws_vpc" "myapp-vpc" {
   cidr_block = var.myapp-cidr-vpc
@@ -101,7 +102,7 @@ data "aws_ami" "amz-linux-image" {
 }
 resource "aws_key_pair" "myapp-sshkey" {
   key_name = "myapp-key"
-  public_key = var.public_key_location
+  public_key = file(var.public_key_location)
   
 }
 
@@ -113,7 +114,27 @@ resource "aws_instance" "myapp-ec2" {
   availability_zone = var.av_zone
   associate_public_ip_address = true
   key_name = aws_key_pair.myapp-sshkey.key_name
-  user_data = file("entry-script.sh")
+  # user_data = file("entry-script.sh")
+
+  connection {
+    type = "ssh"
+    host = self.public_ip
+    user = "ec2-user"
+    private_key = file(var.private_key)
+  }
+
+  provisioner "file" {
+    source = "entry-script.sh"
+    destination = "/home/ec2-user/entry-scrpt.sh"
+    
+  }
+
+  provisioner "remote-exec" {
+     inline = [
+       "bash entry-script.sh"
+     ]
+    
+  }
 
   tags = {
     Name = "${var.env-prefix}-ec2"
