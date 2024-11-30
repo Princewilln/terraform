@@ -6,5 +6,4 @@ myapp-cidr-rtb="0.0.0.0/0"
 myapp-cidr-ingress="73.115.172.129/32"
 instance_type="t2.micro"
 public_key_location="C:/Users/prinz/.ssh/id_rsa.pub"
-
- 
+private_key="C:/Users/prinz/.ssh/id_rsa" 
